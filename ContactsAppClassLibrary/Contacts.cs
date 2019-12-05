@@ -32,7 +32,7 @@ namespace ContactsAppClassLibrary
         ///<summary>
         ///Поле с ID ВКонтакте
         ///</summary>
-        private string _vkID;
+        private string _vkId;
 
         /// <summary>
         /// Создание контакта
@@ -42,21 +42,21 @@ namespace ContactsAppClassLibrary
         /// <param name="phone">Номер телефона</param>
         /// <param name="birthDate">Дата рождения</param>
         /// <param name="email">Электронная почта</param>
-        /// <param name="vkId">Id Вконтакте</param>
-        public Contacts(string name, string surname, long phone, DateTime birthDate, string email, string vkID)
+        /// <param name="vkID">Id Вконтакте</param>
+        public Contacts(string name, string surname, long phone, DateTime birthDate, string email, string vkId)
         {
             Name = name;
             Surname = surname;
             Phone = new PhoneNumber(phone);
             BirthDate = birthDate;
             Email = email;
-            VkID = vkID;
+            VkId = vkId;
         }
 
         public Contacts()
         {
             _birthDate = new DateTime(2000, 1, 1);
-            Phone - new PhoneNumber(70000000000);
+            Phone = new PhoneNumber(70000000000);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace ContactsAppClassLibrary
                 }
                 else
                 {
-                    _name = Char.ToUpper(value[0]) + value.Substring(1));
+                    _name = Char.ToUpper(value[0]) + value.Substring(1);
                 }
             }
         }
@@ -188,7 +188,7 @@ namespace ContactsAppClassLibrary
             contacts.Phone = Phone;
             contacts.BirthDate = BirthDate;
             contacts.Email = Email;
-            contacts.VkId = VkId;
+           // contacts.vkId = vkId;
 
             return contacts;
         }
