@@ -58,7 +58,7 @@ namespace ContactsAppUI
             if (ContactsListBox.SelectedItem != null)
             {
                 var form = new AddEditForm();
-                form.Contact = (Contacts)ContactsListBox.SelectedItem;
+                form.Contact = (Contact)ContactsListBox.SelectedItem;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     RefreshList();
@@ -76,7 +76,7 @@ namespace ContactsAppUI
                 if (MessageBox.Show("Вы точно хотите удалить контакт?", "Предупреждение", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    _contactList.ContactList.Remove((Contacts)ContactsListBox.SelectedItem);
+                    _contactList.ContactList.Remove((Contact)ContactsListBox.SelectedItem);
                     RefreshList();
                 }
             }

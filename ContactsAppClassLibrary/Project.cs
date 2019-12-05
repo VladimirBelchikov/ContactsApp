@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ContactsAppClassLibrary
 {
@@ -8,11 +9,11 @@ namespace ContactsAppClassLibrary
         /// <summary>
         /// Список контактов.
         /// </summary>
-        public List<Contacts> ContactList;
+        public List<Contact> ContactList;
 
         public Project()
         {
-            ContactList = new List<Contacts>();
+            ContactList = new List<Contact>();
         }
     }
 }

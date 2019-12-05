@@ -2,7 +2,7 @@
 
 namespace ContactsAppClassLibrary
 {
-    public class Contacts : ICloneable
+    public class Contact : ICloneable
     {
         /// <summary>
         /// Поле с именем контакта 
@@ -43,7 +43,7 @@ namespace ContactsAppClassLibrary
         /// <param name="birthDate">Дата рождения</param>
         /// <param name="email">Электронная почта</param>
         /// <param name="vkID">Id Вконтакте</param>
-        public Contacts(string name, string surname, long phone, DateTime birthDate, string email, string vkId)
+        public Contact(string name, string surname, long phone, DateTime birthDate, string email, string vkId)
         {
             Name = name;
             Surname = surname;
@@ -53,7 +53,7 @@ namespace ContactsAppClassLibrary
             VkId = vkId;
         }
 
-        public Contacts()
+        public Contact()
         {
             _birthDate = new DateTime(2000, 1, 1);
             Phone = new PhoneNumber(70000000000);
@@ -182,7 +182,7 @@ namespace ContactsAppClassLibrary
 
         public object Clone()
         {
-            var contacts = new Contacts();
+            var contacts = new Contact();
             contacts.Name = Name;
             contacts.Surname = Surname;
             contacts.Phone = Phone;
