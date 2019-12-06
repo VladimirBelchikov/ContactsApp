@@ -5,10 +5,13 @@ namespace ContactsAppClassLibrary
     public class Project
     {
         /// <summary>
-        /// Список контактов.
+        /// Список контактов
         /// </summary>
         public List<Contact> ContactList;
-
+        
+        /// <summary>
+        /// Конструктор списка 
+        /// </summary>
         public Project()
         {
             ContactList = new List<Contact>();
@@ -25,7 +28,7 @@ namespace ContactsAppClassLibrary
         }
 
         /// <summary>
-        /// Поиск по имени или фамилии.
+        /// Поиск по фамилии.
         /// </summary>
         public List<Contact> GetBySurname(string text)
         {

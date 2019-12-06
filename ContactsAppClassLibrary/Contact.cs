@@ -8,7 +8,7 @@ namespace ContactsAppClassLibrary
     public class Contact
     {
         /// <summary>
-        /// Поле с именем контакта 
+        /// Поле с именем класса
         /// </summary>
         private string _name;
 
@@ -38,7 +38,7 @@ namespace ContactsAppClassLibrary
         private string _vkId;
 
         /// <summary>
-        /// Конструктор класса контакт
+        /// Конструктор класса
         /// </summary>
         public Contact()
         {
@@ -98,7 +98,7 @@ namespace ContactsAppClassLibrary
         /// <summary>
         /// Ввод даты рождения
         /// </summary>
-        public DateTime BirthDate
+        public DateTime BirthDay
         {
             get => _birthDay;
 
@@ -144,7 +144,7 @@ namespace ContactsAppClassLibrary
         }
 
         /// <summary>
-        /// Ввод ID Вконтакте.
+        /// Ввод адреса ВК
         /// </summary>
         public string VkId
         {

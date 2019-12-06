@@ -10,13 +10,17 @@ namespace ContactsAppClassLibrary
         private long _phoneNumber;
 
         /// <summary>
-        /// Конструктор класса
+        /// Конструктор класса PhoneNumber
         /// </summary>
+        /// <param name="phone">Номер телефона</param>
         public PhoneNumber(long phone)
         {
             Number = phone;
         }
 
+        /// <summary>
+        /// Ввод номера телефона
+        /// </summary>
         public long Number
         {
             get => _phoneNumber;

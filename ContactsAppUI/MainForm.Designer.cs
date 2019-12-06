@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +54,9 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.ContactListBox = new System.Windows.Forms.ListBox();
-            this.FindTextBox = new System.Windows.Forms.TextBox();
             this.FindLabel = new System.Windows.Forms.Label();
+            this.FindTextBox = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,8 +83,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -104,14 +107,16 @@
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
+            this.editContactToolStripMenuItem.Click += new System.EventHandler(this.editContactToolStripMenuItem_Click);
             // 
             // removeContactToolStripMenuItem
             // 
             this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
-            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeContactToolStripMenuItem.Text = "Remove Contact";
+            this.removeContactToolStripMenuItem.Click += new System.EventHandler(this.removeContactToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -131,7 +136,7 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(246, 89);
+            this.NameLabel.Location = new System.Drawing.Point(245, 96);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(38, 13);
             this.NameLabel.TabIndex = 1;
@@ -140,7 +145,7 @@
             // SurnameLabel
             // 
             this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(246, 66);
+            this.SurnameLabel.Location = new System.Drawing.Point(245, 69);
             this.SurnameLabel.Name = "SurnameLabel";
             this.SurnameLabel.Size = new System.Drawing.Size(49, 13);
             this.SurnameLabel.TabIndex = 2;
@@ -149,7 +154,7 @@
             // BirthdayLabel
             // 
             this.BirthdayLabel.AutoSize = true;
-            this.BirthdayLabel.Location = new System.Drawing.Point(246, 114);
+            this.BirthdayLabel.Location = new System.Drawing.Point(246, 119);
             this.BirthdayLabel.Name = "BirthdayLabel";
             this.BirthdayLabel.Size = new System.Drawing.Size(48, 13);
             this.BirthdayLabel.TabIndex = 3;
@@ -158,7 +163,7 @@
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(246, 140);
+            this.PhoneLabel.Location = new System.Drawing.Point(246, 145);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(38, 13);
             this.PhoneLabel.TabIndex = 4;
@@ -167,7 +172,7 @@
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(246, 168);
+            this.EmailLabel.Location = new System.Drawing.Point(246, 174);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(38, 13);
             this.EmailLabel.TabIndex = 5;
@@ -176,7 +181,7 @@
             // VkLabel
             // 
             this.VkLabel.AutoSize = true;
-            this.VkLabel.Location = new System.Drawing.Point(246, 194);
+            this.VkLabel.Location = new System.Drawing.Point(245, 200);
             this.VkLabel.Name = "VkLabel";
             this.VkLabel.Size = new System.Drawing.Size(43, 13);
             this.VkLabel.TabIndex = 6;
@@ -198,35 +203,37 @@
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(313, 140);
+            this.PhoneTextBox.Location = new System.Drawing.Point(313, 145);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(100, 20);
             this.PhoneTextBox.TabIndex = 9;
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(313, 167);
+            this.EmailTextBox.Location = new System.Drawing.Point(313, 171);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(100, 20);
             this.EmailTextBox.TabIndex = 10;
             // 
             // VkTextBox
             // 
-            this.VkTextBox.Location = new System.Drawing.Point(313, 194);
+            this.VkTextBox.Location = new System.Drawing.Point(313, 197);
             this.VkTextBox.Name = "VkTextBox";
             this.VkTextBox.Size = new System.Drawing.Size(100, 20);
             this.VkTextBox.TabIndex = 11;
             // 
             // BirthdayDateTimePicker
             // 
-            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(313, 114);
+            this.BirthdayDateTimePicker.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.BirthdayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(313, 119);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(100, 20);
             this.BirthdayDateTimePicker.TabIndex = 12;
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(240, 326);
+            this.AddButton.Location = new System.Drawing.Point(12, 440);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 13;
@@ -236,7 +243,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(321, 326);
+            this.EditButton.Location = new System.Drawing.Point(93, 440);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
             this.EditButton.TabIndex = 14;
@@ -246,7 +253,7 @@
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(402, 326);
+            this.RemoveButton.Location = new System.Drawing.Point(174, 440);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(75, 23);
             this.RemoveButton.TabIndex = 15;
@@ -259,16 +266,9 @@
             this.ContactListBox.FormattingEnabled = true;
             this.ContactListBox.Location = new System.Drawing.Point(12, 66);
             this.ContactListBox.Name = "ContactListBox";
-            this.ContactListBox.Size = new System.Drawing.Size(203, 368);
+            this.ContactListBox.Size = new System.Drawing.Size(208, 368);
             this.ContactListBox.TabIndex = 16;
             this.ContactListBox.SelectedIndexChanged += new System.EventHandler(this.ContactListBox_SelectedIndexChanged);
-            // 
-            // FindTextBox
-            // 
-            this.FindTextBox.Location = new System.Drawing.Point(45, 37);
-            this.FindTextBox.Name = "FindTextBox";
-            this.FindTextBox.Size = new System.Drawing.Size(100, 20);
-            this.FindTextBox.TabIndex = 17;
             // 
             // FindLabel
             // 
@@ -278,6 +278,19 @@
             this.FindLabel.Size = new System.Drawing.Size(27, 13);
             this.FindLabel.TabIndex = 18;
             this.FindLabel.Text = "Find";
+            // 
+            // FindTextBox
+            // 
+            this.FindTextBox.Location = new System.Drawing.Point(45, 37);
+            this.FindTextBox.Name = "FindTextBox";
+            this.FindTextBox.Size = new System.Drawing.Size(100, 20);
+            this.FindTextBox.TabIndex = 17;
+            this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 26);
             // 
             // MainForm
             // 
@@ -341,8 +354,9 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.ListBox ContactListBox;
-        private System.Windows.Forms.TextBox FindTextBox;
         private System.Windows.Forms.Label FindLabel;
+        private System.Windows.Forms.TextBox FindTextBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

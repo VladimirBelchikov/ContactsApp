@@ -60,10 +60,8 @@ namespace ContactsAppUI
             }
         }
 
-
-
         /// <summary>
-        /// Метод обновления списка контактов.
+        /// Обновление списка
         /// </summary>
         private void RefreshList()
         {
@@ -73,6 +71,11 @@ namespace ContactsAppUI
             ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
         }
 
+        /// <summary>
+        /// Загрузка формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (File.Exists(ProjectManager.DocumentsPath))
@@ -98,6 +101,7 @@ namespace ContactsAppUI
             var form = new AboutForm();
             form.ShowDialog();
         }
+
         /// <summary>
         /// Кнопка Add
         /// </summary>
@@ -107,6 +111,7 @@ namespace ContactsAppUI
         {
             AddContact();
         }
+
         /// <summary>
         /// Кнопка Edit
         /// </summary>
@@ -116,6 +121,7 @@ namespace ContactsAppUI
         {
             EditContact();
         }
+
         /// <summary>
         /// Кнопка Remove
         /// </summary>
@@ -125,6 +131,7 @@ namespace ContactsAppUI
         {
             RemoveContact();
         }
+
         /// <summary>
         /// Кнопка Add в MenuStrip
         /// </summary>
@@ -134,8 +141,9 @@ namespace ContactsAppUI
         {
             AddContact();
         }
+
         /// <summary>
-        /// 
+        /// Отображение контакта при выборе в ListBox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -146,11 +154,51 @@ namespace ContactsAppUI
                 var contact = (Contact)ContactListBox.SelectedItem;
                 SurnameTextBox.Text = contact.Surname;
                 NameTextBox.Text = contact.Name;
-                BirthdayDateTimePicker.Value = contact.BirthDate;
+                BirthdayDateTimePicker.Value = contact.BirthDay;
                 PhoneTextBox.Text = contact.Phone.Number.ToString();
                 EmailTextBox.Text = contact.Email;
                 VkTextBox.Text = contact.VkId;
             }
+        }
+
+        /// <summary>
+        /// Обновление при вводе в поле Find
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FindTextBox_TextChanged(object sender, EventArgs e)
+        {
+            RefreshList();
+        }
+
+        /// <summary>
+        /// Кнопка Edit в MenuStrip
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void editContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditContact();
+        }
+
+        /// <summary>
+        /// Кнопка Remove в MenuStrip
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void removeContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveContact();
+        }
+
+        /// <summary>
+        /// Кнопка Exit в MenuStrip
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
