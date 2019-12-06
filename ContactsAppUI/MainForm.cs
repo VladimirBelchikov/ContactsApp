@@ -20,7 +20,6 @@ namespace ContactsAppUI
         private void AddContact()
         {
             var form = new AddEditForm();
-
             if (form.ShowDialog() == DialogResult.OK)
             {
                 _contactList.ContactList.Add(form.Contact);

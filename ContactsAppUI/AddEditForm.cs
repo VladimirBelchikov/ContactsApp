@@ -47,7 +47,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Обработчик исключений и присваивание 
+        /// Обработчик исключений и присваивание при нажатии кнопки Ok
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

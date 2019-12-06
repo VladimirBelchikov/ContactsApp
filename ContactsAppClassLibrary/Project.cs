@@ -23,7 +23,7 @@ namespace ContactsAppClassLibrary
         public List<Contact> Sort()
         {
             var list = ContactList;
-            list.Sort((a, b) => a.Surname.CompareTo(b.Surname));
+            list.Sort((First, Second) => First.Surname.CompareTo(Second.Surname));
             return list;
         }
 
@@ -32,7 +32,7 @@ namespace ContactsAppClassLibrary
         /// </summary>
         public List<Contact> GetBySurname(string text)
         {
-            return Sort().FindAll(a => a.Surname.Contains(text));
+            return Sort().FindAll(First => First.Surname.Contains(text));
         }
     }
 }
