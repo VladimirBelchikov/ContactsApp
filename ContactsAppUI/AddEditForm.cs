@@ -12,9 +12,6 @@ namespace ContactsAppUI
             InitializeComponent();
         }
 
-
-
-
         private void AddEditForm_Load(object sender, EventArgs e)
         {
             if (Contact == null)

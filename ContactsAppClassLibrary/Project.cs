@@ -27,9 +27,9 @@ namespace ContactsAppClassLibrary
         /// <summary>
         /// Поиск по имени или фамилии.
         /// </summary>
-        public List<Contact> GetByNameOrSurname(string text)
+        public List<Contact> GetBySurname(string text)
         {
-            return Sort().FindAll(a => a.Surname.Contains(text) || a.Name.Contains(text));
+            return Sort().FindAll(a => a.Surname.Contains(text));
         }
     }
 }

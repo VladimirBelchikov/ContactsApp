@@ -2,6 +2,9 @@
 
 namespace ContactsAppClassLibrary
 {
+    /// <summary>
+    /// Класс приватных переменных
+    /// </summary>
     public class Contact
     {
         /// <summary>
@@ -34,7 +37,9 @@ namespace ContactsAppClassLibrary
         ///</summary>
         private string _vkId;
 
-
+        /// <summary>
+        /// Конструктор класса контакт
+        /// </summary>
         public Contact()
         {
             _birthDay = new DateTime(2000, 1, 1);
@@ -42,7 +47,7 @@ namespace ContactsAppClassLibrary
         }
 
         /// <summary>
-        /// Ввод имено контакта
+        /// Ввод имени контакта
         /// </summary>
         public string Name
         {

@@ -68,7 +68,7 @@ namespace ContactsAppUI
         private void RefreshList()
         {
             ContactListBox.DataSource = null;
-            ContactListBox.DataSource = _contactList.GetByNameOrSurname(FindTextBox.Text);
+            ContactListBox.DataSource = _contactList.GetBySurname(FindTextBox.Text);
             ContactListBox.DisplayMember = "Surname";
             ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
         }
@@ -88,33 +88,57 @@ namespace ContactsAppUI
             RefreshList();
         }
 
-
+        /// <summary>
+        /// Вызов окна About
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new AboutForm();
             form.ShowDialog();
         }
-
+        /// <summary>
+        /// Кнопка Add
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddContact();
         }
-
+        /// <summary>
+        /// Кнопка Edit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditButton_Click(object sender, EventArgs e)
         {
             EditContact();
         }
-
+        /// <summary>
+        /// Кнопка Remove
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             RemoveContact();
         }
-
+        /// <summary>
+        /// Кнопка Add в MenuStrip
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ContactListBox.SelectedItem != null)
