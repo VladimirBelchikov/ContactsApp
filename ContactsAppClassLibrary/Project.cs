@@ -20,8 +20,6 @@ namespace ContactsAppClassLibrary
         public List<Contact> Sort()
         {
             var list = ContactList;
-
-            //лямбда выражения, Linq
             list.Sort((a, b) => a.Surname.CompareTo(b.Surname));
             return list;
         }

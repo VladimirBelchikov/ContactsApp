@@ -27,7 +27,7 @@ namespace ContactsAppClassLibrary
 
                 if (valueString.Length != 11)
                 {
-                    throw new ArgumentException("Номер телефона должен состоять из 11 цифр, а было" + valueString.Length);
+                    throw new ArgumentException("Номер телефона должен состоять из 11 цифр, а было " + valueString.Length);
                 }
                 else if (valueString[0] != '7')
                 {

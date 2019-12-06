@@ -2,7 +2,7 @@
 
 namespace ContactsAppClassLibrary
 {
-    public class Contact : ICloneable
+    public class Contact
     {
         /// <summary>
         /// Поле с именем контакта 
@@ -22,7 +22,7 @@ namespace ContactsAppClassLibrary
         /// <summary>
         /// Поле с датой рождения
         /// </summary>
-        private DateTime _birthDate;
+        private DateTime _birthDay;
 
         /// <summary>
         /// Поле с электронной почтой
@@ -34,28 +34,10 @@ namespace ContactsAppClassLibrary
         ///</summary>
         private string _vkId;
 
-        /// <summary>
-        /// Создание контакта
-        /// </summary>
-        /// <param name="name">Имя</param>
-        /// <param name="surname">Фамилия</param>
-        /// <param name="phone">Номер телефона</param>
-        /// <param name="birthDate">Дата рождения</param>
-        /// <param name="email">Электронная почта</param>
-        /// <param name="vkID">Id Вконтакте</param>
-        public Contact(string name, string surname, long phone, DateTime birthDate, string email, string vkId)
-        {
-            Name = name;
-            Surname = surname;
-            Phone = new PhoneNumber(phone);
-            BirthDate = birthDate;
-            Email = email;
-            VkId = vkId;
-        }
 
         public Contact()
         {
-            _birthDate = new DateTime(2000, 1, 1);
+            _birthDay = new DateTime(2000, 1, 1);
             Phone = new PhoneNumber(70000000000);
         }
 
@@ -113,7 +95,7 @@ namespace ContactsAppClassLibrary
         /// </summary>
         public DateTime BirthDate
         {
-            get => _birthDate;
+            get => _birthDay;
 
             set
             {
@@ -128,7 +110,7 @@ namespace ContactsAppClassLibrary
                 }
                 else
                 {
-                    _birthDate = value;
+                    _birthDay = value;
                 }
             }
         }
@@ -178,19 +160,6 @@ namespace ContactsAppClassLibrary
                     _vkId = value;
                 }
             }
-        }
-
-        public object Clone()
-        {
-            var contact = new Contact();
-            contact.Name = Name;
-            contact.Surname = Surname;
-            contact.Phone = Phone;
-            contact.BirthDate = BirthDate;
-            contact.Email = Email;
-           // contact.vkId = vkId;
-
-            return contact;
         }
     }
 }
