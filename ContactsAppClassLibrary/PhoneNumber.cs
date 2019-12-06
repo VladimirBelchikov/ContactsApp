@@ -12,13 +12,6 @@ namespace ContactsAppClassLibrary
         /// <summary>
         /// Конструктор класса
         /// </summary>
-        public PhoneNumber()
-        {
-        }
-
-        /// <summary>
-        /// Конструктор класса
-        /// </summary>
         public PhoneNumber(long phone)
         {
             Number = phone;

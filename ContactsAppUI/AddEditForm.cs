@@ -19,6 +19,9 @@ namespace ContactsAppUI
             InitializeComponent();
         }
 
+
+
+
         private void AddEditForm_Load(object sender, EventArgs e)
         {
             if (Contact == null)
@@ -38,6 +41,25 @@ namespace ContactsAppUI
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Contact.Surname = SurnameTextBox.Text;
+                Contact.Name = NameTextBox.Text;
+                Contact.BirthDate = BirthdayDateTimePicker.Value;
+                Contact.Phone.Number = long.Parse(PhoneTextBox.Text);
+                Contact.Email = EmailTextBox.Text;
+                Contact.VkId = VkTextBox.Text;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

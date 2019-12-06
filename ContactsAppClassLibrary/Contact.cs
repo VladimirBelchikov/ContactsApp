@@ -182,15 +182,15 @@ namespace ContactsAppClassLibrary
 
         public object Clone()
         {
-            var contacts = new Contact();
-            contacts.Name = Name;
-            contacts.Surname = Surname;
-            contacts.Phone = Phone;
-            contacts.BirthDate = BirthDate;
-            contacts.Email = Email;
-           // contacts.vkId = vkId;
+            var contact = new Contact();
+            contact.Name = Name;
+            contact.Surname = Surname;
+            contact.Phone = Phone;
+            contact.BirthDate = BirthDate;
+            contact.Email = Email;
+           // contact.vkId = vkId;
 
-            return contacts;
+            return contact;
         }
     }
 }

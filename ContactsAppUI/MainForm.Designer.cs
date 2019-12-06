@@ -52,7 +52,9 @@
             this.AddButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
-            this.ContactsListBox = new System.Windows.Forms.ListBox();
+            this.ContactListBox = new System.Windows.Forms.ListBox();
+            this.FindTextBox = new System.Windows.Forms.TextBox();
+            this.FindLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(798, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,6 +99,7 @@
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
             this.addContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.addContactToolStripMenuItem.Text = "Add Contact";
+            this.addContactToolStripMenuItem.Click += new System.EventHandler(this.addContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
@@ -251,20 +254,39 @@
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // ContactsListBox
+            // ContactListBox
             // 
-            this.ContactsListBox.FormattingEnabled = true;
-            this.ContactsListBox.Location = new System.Drawing.Point(13, 28);
-            this.ContactsListBox.Name = "ContactsListBox";
-            this.ContactsListBox.Size = new System.Drawing.Size(203, 368);
-            this.ContactsListBox.TabIndex = 16;
+            this.ContactListBox.FormattingEnabled = true;
+            this.ContactListBox.Location = new System.Drawing.Point(12, 66);
+            this.ContactListBox.Name = "ContactListBox";
+            this.ContactListBox.Size = new System.Drawing.Size(203, 368);
+            this.ContactListBox.TabIndex = 16;
+            this.ContactListBox.SelectedIndexChanged += new System.EventHandler(this.ContactListBox_SelectedIndexChanged);
+            // 
+            // FindTextBox
+            // 
+            this.FindTextBox.Location = new System.Drawing.Point(45, 37);
+            this.FindTextBox.Name = "FindTextBox";
+            this.FindTextBox.Size = new System.Drawing.Size(100, 20);
+            this.FindTextBox.TabIndex = 17;
+            // 
+            // FindLabel
+            // 
+            this.FindLabel.AutoSize = true;
+            this.FindLabel.Location = new System.Drawing.Point(12, 40);
+            this.FindLabel.Name = "FindLabel";
+            this.FindLabel.Size = new System.Drawing.Size(27, 13);
+            this.FindLabel.TabIndex = 18;
+            this.FindLabel.Text = "Find";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ContactsListBox);
+            this.ClientSize = new System.Drawing.Size(798, 520);
+            this.Controls.Add(this.FindLabel);
+            this.Controls.Add(this.FindTextBox);
+            this.Controls.Add(this.ContactListBox);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.AddButton);
@@ -318,7 +340,9 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button RemoveButton;
-        private System.Windows.Forms.ListBox ContactsListBox;
+        private System.Windows.Forms.ListBox ContactListBox;
+        private System.Windows.Forms.TextBox FindTextBox;
+        private System.Windows.Forms.Label FindLabel;
     }
 }
 

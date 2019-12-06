@@ -1,9 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,21 +19,6 @@ namespace ContactsAppUI
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            if (File.Exists(ProjectManager.DocumentsPath))
-            {
-                _contactList = ProjectManager.LoadFromFile(ProjectManager.DocumentsPath);
-            }
-            else
-            {
-                _contactList = new Project();
-                ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
-            }
-
-            RefreshList();
         }
 
         /// <summary>
@@ -55,10 +40,10 @@ namespace ContactsAppUI
         /// </summary>
         private void EditContact()
         {
-            if (ContactsListBox.SelectedItem != null)
+            if (ContactListBox.SelectedItem != null)
             {
                 var form = new AddEditForm();
-                form.Contact = (Contact)ContactsListBox.SelectedItem;
+                form.Contact = (Contact)ContactListBox.SelectedItem;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     RefreshList();
@@ -71,27 +56,44 @@ namespace ContactsAppUI
         /// </summary>
         private void RemoveContact()
         {
-            if (ContactsListBox.SelectedItem != null)
+            if (ContactListBox.SelectedItem != null)
             {
                 if (MessageBox.Show("Вы точно хотите удалить контакт?", "Предупреждение", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    _contactList.ContactList.Remove((Contact)ContactsListBox.SelectedItem);
+                    _contactList.ContactList.Remove((Contact)ContactListBox.SelectedItem);
                     RefreshList();
                 }
             }
         }
+
+
 
         /// <summary>
         /// Метод обновления списка контактов.
         /// </summary>
         private void RefreshList()
         {
-            ContactsListBox.DataSource = null;
-            ContactsListBox.DisplayMember = "Surname";
+            ContactListBox.DataSource = null;
+            ContactListBox.DataSource = _contactList.GetByNameOrSurname(FindTextBox.Text);
+            ContactListBox.DisplayMember = "Surname";
             ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(ProjectManager.DocumentsPath))
+            {
+                _contactList = ProjectManager.LoadFromFile(ProjectManager.DocumentsPath);
+            }
+            else
+            {
+                _contactList = new Project();
+                ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
+            }
+
+            RefreshList();
+        }
 
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +115,25 @@ namespace ContactsAppUI
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             RemoveContact();
+        }
+
+        private void addContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddContact();
+        }
+
+        private void ContactListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ContactListBox.SelectedItem != null)
+            {
+                var contact = (Contact)ContactListBox.SelectedItem;
+                SurnameTextBox.Text = contact.Surname;
+                NameTextBox.Text = contact.Name;
+                BirthdayDateTimePicker.Value = contact.BirthDate;
+                PhoneTextBox.Text = contact.Phone.Number.ToString();
+                EmailTextBox.Text = contact.Email;
+                VkTextBox.Text = contact.VkId;
+            }
         }
     }
 }
