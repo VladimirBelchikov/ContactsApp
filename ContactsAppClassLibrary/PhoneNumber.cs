@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ContactsAppClassLibrary
+namespace ContactsApp.Model
 {
     /// <summary>
     /// Класс работающий с номером телефона

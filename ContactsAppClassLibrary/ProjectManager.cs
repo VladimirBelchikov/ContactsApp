@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 
 
-namespace ContactsAppClassLibrary
+namespace ContactsApp.Model
 {
     public class ProjectManager
     {

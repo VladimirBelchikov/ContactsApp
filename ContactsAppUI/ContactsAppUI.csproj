@@ -104,9 +104,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ContactsAppClassLibrary\ContactsAppClassLibrary.csproj">
+    <ProjectReference Include="..\ContactsAppClassLibrary\ContactsApp.Model.csproj">
       <Project>{c1343780-5fc1-42e4-9659-e02f9934d11d}</Project>
-      <Name>ContactsAppClassLibrary</Name>
+      <Name>ContactsApp.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

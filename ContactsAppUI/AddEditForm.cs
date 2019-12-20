@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
-using ContactsAppClassLibrary;
+using ContactsApp.Model;
 
 namespace ContactsAppUI
 {
-    public partial class AddEditForm : Form
+    /// <summary>
+    /// 
+    /// </summary>
+    public partial class ContactForm : Form
     {
-        public Contact Contact;
-        public AddEditForm()
+        ////TODO //TODO
+        private Contact Contact;
+        public ContactForm()
         {
             InitializeComponent();
         }

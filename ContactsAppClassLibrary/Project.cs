@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ContactsAppClassLibrary
+namespace ContactsApp.Model
 {
     public class Project
     {

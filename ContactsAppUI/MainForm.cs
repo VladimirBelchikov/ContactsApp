@@ -7,7 +7,10 @@ namespace ContactsAppUI
 {
     public partial class MainForm : Form
     {
-        private Project _contactList;
+       /// <summary>
+       /// Поле с классом проекта
+       /// </summary>
+        private Project _project;
 
         public MainForm()
         {
@@ -19,10 +22,10 @@ namespace ContactsAppUI
         /// </summary>
         private void AddContact()
         {
-            var form = new AddEditForm();
+            var form = new ContactForm();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                _contactList.ContactList.Add(form.Contact);
+                _project.ContactList.Add(form.Contact);
                 RefreshList();
             }
         }
@@ -34,7 +37,7 @@ namespace ContactsAppUI
         {
             if (ContactListBox.SelectedItem != null)
             {
-                var form = new AddEditForm();
+                var form = new ContactForm();
                 form.Contact = (Contact)ContactListBox.SelectedItem;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -53,7 +56,7 @@ namespace ContactsAppUI
                 if (MessageBox.Show("Вы точно хотите удалить контакт?", "Предупреждение", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    _contactList.ContactList.Remove((Contact)ContactListBox.SelectedItem);
+                    _project.ContactList.Remove((Contact)ContactListBox.SelectedItem);
                     RefreshList();
                 }
             }
@@ -65,9 +68,9 @@ namespace ContactsAppUI
         private void RefreshList()
         {
             ContactListBox.DataSource = null;
-            ContactListBox.DataSource = _contactList.GetBySurname(FindTextBox.Text);
+            ContactListBox.DataSource = _project.GetBySurname(FindTextBox.Text);
             ContactListBox.DisplayMember = "Surname";
-            ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
+            ProjectManager.SaveToFile(_project, ProjectManager.DocumentsPath);
         }
 
         /// <summary>
@@ -79,12 +82,12 @@ namespace ContactsAppUI
         {
             if (File.Exists(ProjectManager.DocumentsPath))
             {
-                _contactList = ProjectManager.LoadFromFile(ProjectManager.DocumentsPath);
+                _project = ProjectManager.LoadFromFile(ProjectManager.DocumentsPath);
             }
             else
             {
-                _contactList = new Project();
-                ProjectManager.SaveToFile(_contactList, ProjectManager.DocumentsPath);
+                _project = new Project();
+                ProjectManager.SaveToFile(_project, ProjectManager.DocumentsPath);
             }
 
             RefreshList();

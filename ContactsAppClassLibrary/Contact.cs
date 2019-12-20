@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ContactsAppClassLibrary
+namespace ContactsApp.Model
 {
     /// <summary>
     /// Класс приватных переменных
@@ -42,7 +42,6 @@ namespace ContactsAppClassLibrary
         /// </summary>
         public Contact()
         {
-            _birthDay = new DateTime(2000, 1, 1);
             Phone = new PhoneNumber(70000000000);
         }
 
@@ -152,11 +151,7 @@ namespace ContactsAppClassLibrary
 
             set
             {
-                if (value == string.Empty)
-                {
-                    throw new ArgumentException("Поле 'vk.com' не может быть пустым");
-                }
-                else if (value.Length > 15)
+                if (value.Length > 15)
                 {
                     throw new ArgumentException("Длина id Вконтакте должна быть не более 15-ти символов, а была " + value.Length);
                 }
