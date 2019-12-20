@@ -47,7 +47,7 @@
             // Surname
             // 
             this.Surname.AutoSize = true;
-            this.Surname.Location = new System.Drawing.Point(8, 12);
+            this.Surname.Location = new System.Drawing.Point(8, 13);
             this.Surname.Name = "Surname";
             this.Surname.Size = new System.Drawing.Size(52, 13);
             this.Surname.TabIndex = 0;
@@ -56,7 +56,7 @@
             // Birthday
             // 
             this.Birthday.AutoSize = true;
-            this.Birthday.Location = new System.Drawing.Point(8, 67);
+            this.Birthday.Location = new System.Drawing.Point(8, 73);
             this.Birthday.Name = "Birthday";
             this.Birthday.Size = new System.Drawing.Size(48, 13);
             this.Birthday.TabIndex = 2;
@@ -65,7 +65,7 @@
             // Phone
             // 
             this.Phone.AutoSize = true;
-            this.Phone.Location = new System.Drawing.Point(8, 90);
+            this.Phone.Location = new System.Drawing.Point(8, 103);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(41, 13);
             this.Phone.TabIndex = 3;
@@ -74,7 +74,7 @@
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Location = new System.Drawing.Point(8, 116);
+            this.Email.Location = new System.Drawing.Point(8, 133);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(38, 13);
             this.Email.TabIndex = 4;
@@ -83,7 +83,7 @@
             // vk
             // 
             this.vk.AutoSize = true;
-            this.vk.Location = new System.Drawing.Point(8, 142);
+            this.vk.Location = new System.Drawing.Point(8, 163);
             this.vk.Name = "vk";
             this.vk.Size = new System.Drawing.Size(45, 13);
             this.vk.TabIndex = 5;
@@ -91,14 +91,14 @@
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(66, 9);
+            this.SurnameTextBox.Location = new System.Drawing.Point(66, 10);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(368, 20);
             this.SurnameTextBox.TabIndex = 6;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(66, 35);
+            this.NameTextBox.Location = new System.Drawing.Point(66, 40);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(368, 20);
             this.NameTextBox.TabIndex = 7;
@@ -106,35 +106,35 @@
             // BirthdayDateTimePicker
             // 
             this.BirthdayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(66, 61);
+            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(66, 70);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(368, 20);
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(183, 20);
             this.BirthdayDateTimePicker.TabIndex = 8;
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(66, 87);
+            this.PhoneTextBox.Location = new System.Drawing.Point(66, 100);
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(141, 20);
+            this.PhoneTextBox.Size = new System.Drawing.Size(183, 20);
             this.PhoneTextBox.TabIndex = 9;
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(66, 113);
+            this.EmailTextBox.Location = new System.Drawing.Point(66, 130);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(368, 20);
             this.EmailTextBox.TabIndex = 10;
             // 
             // VkTextBox
             // 
-            this.VkTextBox.Location = new System.Drawing.Point(66, 139);
+            this.VkTextBox.Location = new System.Drawing.Point(66, 160);
             this.VkTextBox.Name = "VkTextBox";
             this.VkTextBox.Size = new System.Drawing.Size(368, 20);
             this.VkTextBox.TabIndex = 11;
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(11, 185);
+            this.OkButton.Location = new System.Drawing.Point(66, 216);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(75, 23);
             this.OkButton.TabIndex = 12;
@@ -144,7 +144,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(92, 185);
+            this.CancelButton.Location = new System.Drawing.Point(147, 216);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 13;
@@ -155,17 +155,17 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(8, 38);
+            this.NameLabel.Location = new System.Drawing.Point(8, 43);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(35, 13);
+            this.NameLabel.Size = new System.Drawing.Size(38, 13);
             this.NameLabel.TabIndex = 14;
-            this.NameLabel.Text = "Name";
+            this.NameLabel.Text = "Name:";
             // 
-            // AddEditForm
+            // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 339);
+            this.ClientSize = new System.Drawing.Size(518, 337);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
@@ -180,8 +180,9 @@
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.Birthday);
             this.Controls.Add(this.Surname);
-            this.Name = "AddEditForm";
-            this.Text = "AddEditForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "ContactForm";
+            this.Text = "Add/Edit Contact";
             this.Load += new System.EventHandler(this.AddEditForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

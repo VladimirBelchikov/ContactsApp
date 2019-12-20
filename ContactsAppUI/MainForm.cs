@@ -25,7 +25,7 @@ namespace ContactsAppUI
             var form = new ContactForm();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                _project.ContactList.Add(form.Contact);
+                _project.ContactList.Add(form._contact);
                 RefreshList();
             }
         }
@@ -38,7 +38,7 @@ namespace ContactsAppUI
             if (ContactListBox.SelectedItem != null)
             {
                 var form = new ContactForm();
-                form.Contact = (Contact)ContactListBox.SelectedItem;
+                form._contact = (Contact)ContactListBox.SelectedItem;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     RefreshList();

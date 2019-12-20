@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +50,12 @@
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.VkTextBox = new System.Windows.Forms.TextBox();
             this.BirthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.RemoveButton = new System.Windows.Forms.Button();
             this.ContactListBox = new System.Windows.Forms.ListBox();
             this.FindLabel = new System.Windows.Forms.Label();
             this.FindTextBox = new System.Windows.Forms.TextBox();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(833, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(701, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,8 +134,11 @@
             // 
             // NameLabel
             // 
+            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(245, 96);
+            this.NameLabel.Location = new System.Drawing.Point(228, 103);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(38, 13);
             this.NameLabel.TabIndex = 1;
@@ -142,17 +146,23 @@
             // 
             // SurnameLabel
             // 
+            this.SurnameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(245, 69);
+            this.SurnameLabel.Location = new System.Drawing.Point(228, 73);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(49, 13);
+            this.SurnameLabel.Size = new System.Drawing.Size(52, 13);
             this.SurnameLabel.TabIndex = 2;
-            this.SurnameLabel.Text = "Surname";
+            this.SurnameLabel.Text = "Surname:";
             // 
             // BirthdayLabel
             // 
+            this.BirthdayLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthdayLabel.AutoSize = true;
-            this.BirthdayLabel.Location = new System.Drawing.Point(246, 119);
+            this.BirthdayLabel.Location = new System.Drawing.Point(229, 133);
             this.BirthdayLabel.Name = "BirthdayLabel";
             this.BirthdayLabel.Size = new System.Drawing.Size(48, 13);
             this.BirthdayLabel.TabIndex = 3;
@@ -160,17 +170,23 @@
             // 
             // PhoneLabel
             // 
+            this.PhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(246, 145);
+            this.PhoneLabel.Location = new System.Drawing.Point(229, 163);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(38, 13);
+            this.PhoneLabel.Size = new System.Drawing.Size(41, 13);
             this.PhoneLabel.TabIndex = 4;
-            this.PhoneLabel.Text = "Phone";
+            this.PhoneLabel.Text = "Phone:";
             // 
             // EmailLabel
             // 
+            this.EmailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(246, 174);
+            this.EmailLabel.Location = new System.Drawing.Point(229, 193);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(38, 13);
             this.EmailLabel.TabIndex = 5;
@@ -178,8 +194,11 @@
             // 
             // VkLabel
             // 
+            this.VkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.VkLabel.AutoSize = true;
-            this.VkLabel.Location = new System.Drawing.Point(245, 200);
+            this.VkLabel.Location = new System.Drawing.Point(228, 223);
             this.VkLabel.Name = "VkLabel";
             this.VkLabel.Size = new System.Drawing.Size(43, 13);
             this.VkLabel.TabIndex = 6;
@@ -187,35 +206,50 @@
             // 
             // SurnameTextBox
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(313, 66);
+            this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SurnameTextBox.Location = new System.Drawing.Point(296, 70);
+            this.SurnameTextBox.MinimumSize = new System.Drawing.Size(40, 20);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(313, 20);
             this.SurnameTextBox.TabIndex = 7;
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(313, 93);
+            this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NameTextBox.Location = new System.Drawing.Point(296, 100);
+            this.NameTextBox.MinimumSize = new System.Drawing.Size(40, 20);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(313, 20);
             this.NameTextBox.TabIndex = 8;
             // 
             // PhoneTextBox
             // 
-            this.PhoneTextBox.Location = new System.Drawing.Point(313, 145);
+            this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PhoneTextBox.Location = new System.Drawing.Point(296, 160);
+            this.PhoneTextBox.MinimumSize = new System.Drawing.Size(40, 20);
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(137, 20);
+            this.PhoneTextBox.Size = new System.Drawing.Size(140, 20);
             this.PhoneTextBox.TabIndex = 9;
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(313, 171);
+            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EmailTextBox.Location = new System.Drawing.Point(296, 190);
+            this.EmailTextBox.MinimumSize = new System.Drawing.Size(40, 20);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(313, 20);
             this.EmailTextBox.TabIndex = 10;
             // 
             // VkTextBox
             // 
-            this.VkTextBox.Location = new System.Drawing.Point(313, 197);
+            this.VkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.VkTextBox.Location = new System.Drawing.Point(296, 220);
+            this.VkTextBox.MinimumSize = new System.Drawing.Size(40, 20);
             this.VkTextBox.Name = "VkTextBox";
             this.VkTextBox.Size = new System.Drawing.Size(313, 20);
             this.VkTextBox.TabIndex = 11;
@@ -223,55 +257,31 @@
             // BirthdayDateTimePicker
             // 
             this.BirthdayDateTimePicker.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.BirthdayDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthdayDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(313, 119);
+            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(296, 130);
+            this.BirthdayDateTimePicker.MinimumSize = new System.Drawing.Size(40, 20);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
-            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(100, 20);
+            this.BirthdayDateTimePicker.Size = new System.Drawing.Size(140, 20);
             this.BirthdayDateTimePicker.TabIndex = 12;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(12, 440);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 13;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Location = new System.Drawing.Point(93, 440);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(75, 23);
-            this.EditButton.TabIndex = 14;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Location = new System.Drawing.Point(174, 440);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(75, 23);
-            this.RemoveButton.TabIndex = 15;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // ContactListBox
             // 
+            this.ContactListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.ContactListBox.FormattingEnabled = true;
-            this.ContactListBox.Location = new System.Drawing.Point(12, 66);
+            this.ContactListBox.Location = new System.Drawing.Point(12, 70);
+            this.ContactListBox.MinimumSize = new System.Drawing.Size(200, 200);
             this.ContactListBox.Name = "ContactListBox";
-            this.ContactListBox.Size = new System.Drawing.Size(208, 368);
+            this.ContactListBox.Size = new System.Drawing.Size(200, 368);
             this.ContactListBox.TabIndex = 16;
             this.ContactListBox.SelectedIndexChanged += new System.EventHandler(this.ContactListBox_SelectedIndexChanged);
             // 
             // FindLabel
             // 
             this.FindLabel.AutoSize = true;
-            this.FindLabel.Location = new System.Drawing.Point(12, 40);
+            this.FindLabel.Location = new System.Drawing.Point(12, 39);
             this.FindLabel.Name = "FindLabel";
             this.FindLabel.Size = new System.Drawing.Size(27, 13);
             this.FindLabel.TabIndex = 18;
@@ -279,17 +289,63 @@
             // 
             // FindTextBox
             // 
-            this.FindTextBox.Location = new System.Drawing.Point(45, 37);
+            this.FindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.FindTextBox.Location = new System.Drawing.Point(45, 36);
+            this.FindTextBox.MinimumSize = new System.Drawing.Size(40, 20);
             this.FindTextBox.Name = "FindTextBox";
-            this.FindTextBox.Size = new System.Drawing.Size(100, 20);
+            this.FindTextBox.Size = new System.Drawing.Size(167, 20);
             this.FindTextBox.TabIndex = 17;
             this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RemoveButton.BackColor = System.Drawing.SystemColors.Control;
+            this.RemoveButton.FlatAppearance.BorderSize = 0;
+            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveButton.Image = global::ContactsAppUI.Properties.Resources.icons8_delete_16;
+            this.RemoveButton.Location = new System.Drawing.Point(88, 449);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(32, 32);
+            this.RemoveButton.TabIndex = 15;
+            this.RemoveButton.UseVisualStyleBackColor = false;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditButton.BackColor = System.Drawing.SystemColors.Control;
+            this.EditButton.FlatAppearance.BorderSize = 0;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Image = global::ContactsAppUI.Properties.Resources.icons8_edit_file_16;
+            this.EditButton.Location = new System.Drawing.Point(50, 449);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(32, 32);
+            this.EditButton.TabIndex = 14;
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddButton.BackColor = System.Drawing.SystemColors.Control;
+            this.AddButton.FlatAppearance.BorderSize = 0;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::ContactsAppUI.Properties.Resources.icons8_add_16;
+            this.AddButton.Location = new System.Drawing.Point(12, 449);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(32, 32);
+            this.AddButton.TabIndex = 13;
+            this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 537);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.ClientSize = new System.Drawing.Size(701, 494);
             this.Controls.Add(this.FindLabel);
             this.Controls.Add(this.FindTextBox);
             this.Controls.Add(this.ContactListBox);
@@ -309,7 +365,9 @@
             this.Controls.Add(this.SurnameLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(366, 362);
             this.Name = "MainForm";
             this.Text = "ContactsApp";
             this.Load += new System.EventHandler(this.MainForm_Load);
