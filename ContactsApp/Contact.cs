@@ -58,13 +58,13 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Поле имени не может быть пустым");
                 }
-                else if (value.Length > 20)
+                else if (value.Length > 50)
                 {
                     throw new ArgumentException("Длина имени должна быть не более 50-ти символов, а была" + value.Length);
                 }
                 else
                 {
-                    _name = Char.ToUpper(value[0]) + value.Substring(1);
+                    _name = Char.ToUpper(value[0]) + value.Substring(1).ToLower();
                 }
             }
         }
@@ -83,13 +83,13 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Поле 'Surname' не может быть пустым");
                 }
-                else if (value.Length > 20)
+                else if (value.Length > 50)
                 {
                     throw new ArgumentException("Длина фамилии должна быть не более 50-ти символов, а была" + value.Length);
                 }
                 else
                 {
-                    _surname = Char.ToUpper(value[0]) + value.Substring(1);
+                    _surname = Char.ToUpper(value[0]) + value.Substring(1).ToLower();
                 }
             }
         }
