@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ContactsAppUI
 {
@@ -15,6 +7,18 @@ namespace ContactsAppUI
         public AboutForm()
         {
             InitializeComponent();
+        }
+
+        private void EmailLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EmailLinkLabel.Links[EmailLinkLabel.Links.IndexOf(e.Link)].Visited = true; 
+            System.Diagnostics.Process.Start("www.mail.ru");
+        }
+
+        private void GithubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GithubLinkLabel.Links[GithubLinkLabel.Links.IndexOf(e.Link)].Visited = true;
+            System.Diagnostics.Process.Start("www.github.com/VladimirBelchikov/ContactsApp");
         }
     }
 }

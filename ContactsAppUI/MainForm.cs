@@ -68,7 +68,7 @@ namespace ContactsAppUI
         private void RefreshList()
         {
             ContactListBox.DataSource = null;
-            ContactListBox.DataSource = _project.GetBySurname(FindTextBox.Text);
+            ContactListBox.DataSource = _project.GetByNameOrSurname(FindTextBox.Text);
             ContactListBox.DisplayMember = "Surname";
             ProjectManager.SaveToFile(_project, ProjectManager.DocumentsPath);
         }

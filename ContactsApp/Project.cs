@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace ContactsApp
 {
@@ -28,11 +30,21 @@ namespace ContactsApp
         }
 
         /// <summary>
+        /// Получение списка именинников.
+        /// </summary>
+        public List<string> GetListBirthday()
+        {
+            var listContacts = ContactList.Where(
+                First => First.BirthDay.Day == DateTime.Now.Day && First.BirthDay.Month == DateTime.Now.Month);
+
+            return listContacts.Select(contact => contact.Surname).ToList();
+        }
+        /// <summary
         /// Поиск по фамилии.
         /// </summary>
-        public List<Contact> GetBySurname(string text)
+        public List<Contact> GetByNameOrSurname(string text)
         {
-            return Sort().FindAll(First => First.Surname.Contains(text));
+            return Sort().FindAll(First => First.Surname.Contains(text) || First.Name.Contains(text));
         }
     }
 }
