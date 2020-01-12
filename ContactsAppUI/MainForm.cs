@@ -25,7 +25,7 @@ namespace ContactsAppUI
             var form = new ContactForm();
             if (form.ShowDialog() == DialogResult.OK)
             {
-                _project.ContactList.Add(form._contact);
+                _project.ContactList.Add(form.Contact);
                 RefreshList();
             }
         }
@@ -38,7 +38,7 @@ namespace ContactsAppUI
             if (ContactListBox.SelectedItem != null)
             {
                 var form = new ContactForm();
-                form._contact = (Contact)ContactListBox.SelectedItem;
+                form.Contact = (Contact)ContactListBox.SelectedItem;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     RefreshList();
@@ -51,14 +51,18 @@ namespace ContactsAppUI
         /// </summary>
         private void RemoveContact()
         {
-            if (ContactListBox.SelectedItem != null)
+            if (ContactListBox.SelectedItem != null && MessageBox.Show
+                    (
+                    "Вы точно хотите удалить контакт?",
+                    "Предупреждение",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2
+                    )
+                    == DialogResult.Yes)
             {
-                if (MessageBox.Show("Вы точно хотите удалить контакт?", "Предупреждение", MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    _project.ContactList.Remove((Contact)ContactListBox.SelectedItem);
-                    RefreshList();
-                }
+                _project.ContactList.Remove((Contact)ContactListBox.SelectedItem);
+                RefreshList();
             }
         }
 
@@ -90,6 +94,13 @@ namespace ContactsAppUI
                 ProjectManager.SaveToFile(_project, ProjectManager.DocumentsPath);
             }
 
+            if (_project.GetListBirthday().Length > 0)
+            {
+                BirthdayTodayLabel.Text = $"Сегодня день рождения: {_project.GetListBirthday()} ";
+                BirthdayTodayLabel.Visible = true;
+                BackgroundPanel.Visible = true;
+            }
+
             RefreshList();
         }
 
@@ -98,7 +109,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new AboutForm();
             form.ShowDialog();
@@ -139,7 +150,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void addContactToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
         }
@@ -178,7 +189,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void editContactToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditContact();
         }
@@ -188,9 +199,35 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void removeContactToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RemoveContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveContact();
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.Delete:
+                case Keys.Subtract:
+                case Keys.Pause:
+
+                    RemoveContact();
+                    break;
+
+                case Keys.Add:
+                    AddContact();
+                    break;
+
+                case Keys.Escape:
+                    Environment.Exit(0);
+                    break;
+
+                case Keys.F1:
+                    var form = new AboutForm();
+                    form.ShowDialog();
+                    break;
+            }
         }
 
         /// <summary>
@@ -198,9 +235,9 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Environment.Exit(0);
         }
     }
 }

@@ -9,10 +9,12 @@ namespace ContactsAppUI
     /// </summary>
     public partial class ContactForm : Form
     {
+        private Contact _contact;
+
         /// <summary>
         /// Поле с классом контакта
         /// </summary>
-        public Contact _contact;
+        public Contact Contact { get { return _contact; } set { _contact = value; } }
         public ContactForm()
         {
             InitializeComponent();
@@ -25,18 +27,18 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void AddEditForm_Load(object sender, EventArgs e)
         {
-            if (_contact == null)
+            if (Contact == null)
             {
-                _contact = new Contact();
+                Contact = new Contact();
             }
             else
             {
-                PhoneTextBox.Text = _contact.Phone.Number.ToString();
-                SurnameTextBox.Text = _contact.Surname;
-                NameTextBox.Text = _contact.Name;
-                BirthdayDateTimePicker.Value = _contact.BirthDay;
-                EmailTextBox.Text = _contact.Email;
-                VkTextBox.Text = _contact.VkId;
+                PhoneTextBox.Text = Contact.Phone.Number.ToString();
+                SurnameTextBox.Text = Contact.Surname;
+                NameTextBox.Text = Contact.Name;
+                BirthdayDateTimePicker.Value = Contact.BirthDay;
+                EmailTextBox.Text = Contact.Email;
+                VkTextBox.Text = Contact.VkId;
 
             }
         }
@@ -61,12 +63,12 @@ namespace ContactsAppUI
         {
             try
             {
-                _contact.Surname = SurnameTextBox.Text;
-                _contact.Name = NameTextBox.Text;
-                _contact.BirthDay = BirthdayDateTimePicker.Value;
-                _contact.Phone.Number = long.Parse(PhoneTextBox.Text);
-                _contact.Email = EmailTextBox.Text;
-                _contact.VkId = VkTextBox.Text;
+                Contact.Surname = SurnameTextBox.Text;
+                Contact.Name = NameTextBox.Text;
+                Contact.BirthDay = BirthdayDateTimePicker.Value;
+                Contact.Phone.Number = long.Parse(PhoneTextBox.Text);
+                Contact.Email = EmailTextBox.Text;
+                Contact.VkId = VkTextBox.Text;
                 DialogResult = DialogResult.OK;
                 Close();
             }

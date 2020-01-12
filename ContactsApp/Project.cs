@@ -32,12 +32,12 @@ namespace ContactsApp
         /// <summary>
         /// Получение списка именинников.
         /// </summary>
-        public List<string> GetListBirthday()
+        public string GetListBirthday()
         {
             var listContacts = ContactList.Where(
                 First => First.BirthDay.Day == DateTime.Now.Day && First.BirthDay.Month == DateTime.Now.Month);
 
-            return listContacts.Select(contact => contact.Surname).ToList();
+            return string.Join(",", listContacts.Select(contact => contact.Surname).ToList());
         }
         /// <summary
         /// Поиск по фамилии.

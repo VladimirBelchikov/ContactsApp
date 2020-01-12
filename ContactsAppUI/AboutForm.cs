@@ -20,5 +20,14 @@ namespace ContactsAppUI
             GithubLinkLabel.Links[GithubLinkLabel.Links.IndexOf(e.Link)].Visited = true;
             System.Diagnostics.Process.Start("www.github.com/VladimirBelchikov/ContactsApp");
         }
+
+        private void AboutForm_KeyDown (object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult = DialogResult.Cancel;
+                Close();
+            }
+        }
     }
 }

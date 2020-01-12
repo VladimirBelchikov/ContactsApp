@@ -40,7 +40,7 @@
             this.EmailTextBox = new System.Windows.Forms.TextBox();
             this.VkTextBox = new System.Windows.Forms.TextBox();
             this.OkButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CancelEditButton = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -142,15 +142,16 @@
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // CancelButton
+            // CancelEditButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(147, 216);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 13;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CancelEditButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CancelEditButton.Location = new System.Drawing.Point(147, 216);
+            this.CancelEditButton.Name = "CancelEditButton";
+            this.CancelEditButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelEditButton.TabIndex = 13;
+            this.CancelEditButton.Text = "Cancel";
+            this.CancelEditButton.UseVisualStyleBackColor = true;
+            this.CancelEditButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // NameLabel
             // 
@@ -163,11 +164,13 @@
             // 
             // ContactForm
             // 
+            this.AcceptButton = this.OkButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CancelEditButton;
             this.ClientSize = new System.Drawing.Size(465, 291);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CancelEditButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.VkTextBox);
             this.Controls.Add(this.EmailTextBox);
@@ -181,6 +184,7 @@
             this.Controls.Add(this.Birthday);
             this.Controls.Add(this.Surname);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.Name = "ContactForm";
             this.Text = "Add/Edit Contact";
             this.Load += new System.EventHandler(this.AddEditForm_Load);
@@ -203,7 +207,7 @@
         private System.Windows.Forms.TextBox EmailTextBox;
         private System.Windows.Forms.TextBox VkTextBox;
         private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CancelEditButton;
         private System.Windows.Forms.Label NameLabel;
     }
 }
