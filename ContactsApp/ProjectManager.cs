@@ -8,8 +8,7 @@ namespace ContactsApp
     public class ProjectManager
     {
         // Путь в папку "Документы".
-        public static string DocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
-                                + @"\ContactsApp.con";
+        public static string DocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\ContactsApp.con";
 
         /// <summary>
         /// Сохранение списка заметок в файл.
@@ -20,11 +19,11 @@ namespace ContactsApp
         {
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для записи в файл с указанием пути
-            using (StreamWriter sw = new StreamWriter(fileName))
-            using (JsonWriter writer = new JsonTextWriter(sw))
+            using (StreamWriter streamWriter= new StreamWriter(fileName))
+            using (JsonWriter jsonWriter= new JsonTextWriter(streamWriter))
             {
                 //Вызываем сериализацию и передаем объект, который хотим сериализовать
-                serializer.Serialize(writer, contactList);
+                serializer.Serialize(jsonWriter, contactList);
             }
         }
 
@@ -37,13 +36,13 @@ namespace ContactsApp
         {
             Project notes = new Project();
             //Создаём экземпляр сериализатора.
-            JsonSerializer serializer = new JsonSerializer();
+            JsonSerializer jsonSerializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути.
-            using (StreamReader sr = new StreamReader(fileName))
-            using (JsonReader reader = new JsonTextReader(sr))
+            using (StreamReader streamReader = new StreamReader(fileName))
+            using (JsonReader jsonReader = new JsonTextReader(streamReader))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных.
-                var noteList = serializer.Deserialize<Project>(reader);
+                var noteList = jsonSerializer.Deserialize<Project>(jsonReader);
                 notes = noteList;
             }
             return notes;

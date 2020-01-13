@@ -18,6 +18,7 @@ namespace СontactsAppUnitTests
             contact.VkId = "id712383132";
             contact.Email = "Ivan@mail.ru";
             contact.BirthDay = new System.DateTime(2000,1,1);
+            contact.Phone = new PhoneNumber(79009000909);
             var project = new Project();
             project.ContactList.Add(contact);
             ProjectManager.SaveToFile(project);
