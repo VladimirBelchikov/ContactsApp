@@ -109,8 +109,7 @@ namespace ContactsApp
                 }
                 else if (value > DateTime.Now)
                 {
-                    throw new ArgumentException("Дата не должна быть больше " + DateTime.Now.ToShortDateString() +
-                                                ", а была " + value.Date.ToShortDateString());
+                    throw new ArgumentException("Дата не должна быть больше " + DateTime.Now.ToShortDateString() + ", а была " + value.Date.ToShortDateString());
                 }
                 else
                 {
@@ -134,8 +133,7 @@ namespace ContactsApp
                 }
                 else if (value.Length > 50)
                 {
-                    throw new ArgumentException("Длина адреса почты должна быть не более 50 символов," +
-                                                " а была " + value.Length);
+                    throw new ArgumentException("Длина адреса почты должна быть не более 50 символов, а была " + value.Length);
                 }
                 else
                     _email = value;

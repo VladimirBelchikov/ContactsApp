@@ -7,7 +7,15 @@ namespace ContactsApp
     /// </summary>
     public class PhoneNumber
     {
+        /// <summary>
+        /// Создание переменной номера телефона
+        /// </summary>
         private long _phoneNumber;
+
+
+        public PhoneNumber() { }
+
+
 
         /// <summary>
         /// Конструктор класса PhoneNumber

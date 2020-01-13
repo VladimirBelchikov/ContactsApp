@@ -48,5 +48,29 @@ namespace ContactsApp
             }
             return notes;
         }
+
+        /// <summary>
+        /// Сохранение контактов в путь по умолчанию.
+        /// </summary>
+        /// <param name="contactList">Список контактов</param>
+        public static void SaveToFile(Project contactList)
+        {
+            SaveToFile(contactList, DocumentsPath);
+        }
+
+
+        /// <summary>
+        /// Возвращает список контактов из файла по умолчанию.
+        /// </summary>
+        /// <returns>Список контактов.</returns>
+        public static Project LoadFromFile()
+        {
+            return LoadFromFile(DocumentsPath);
+        }
+
+
+
+
+
     }
 }
