@@ -21,9 +21,9 @@ namespace СontactsAppUnitTests
             contact.Phone = new PhoneNumber(79009000909);
             var project = new Project();
             project.ContactList.Add(contact);
-            ProjectManager.SaveToFile(project);
+            ProjectManager.SaveToFile(project, "c:\\users\\аааармнрв\\testActual.txt");
 
-            var actual = ProjectManager.LoadFromFile().ContactList.Last();
+            var actual = ProjectManager.LoadFromFile("c:\\users\\аааармнрв\\test.txt").ContactList.Last();
             Assert.AreEqual(contact.Surname, actual.Surname, "Сериализация работает неверно.");
         }
         [Test(Description = "Сохранение в неверный путь.")]
@@ -45,7 +45,7 @@ namespace СontactsAppUnitTests
         public void TestProjectManagerLoadFromFile_NotCorrectFile()
         {
             var text = "incorrect file";
-            var fileName = "c:\\users\\аааармнрв\\test.txt";
+            var fileName = "c:\\users\\аааармнрв\\testActual.txt";
             File.WriteAllText(fileName, text);
             Assert.Throws<JsonReaderException>(() => { var project = ProjectManager.LoadFromFile(fileName); }, "Должно возникать исключение, если файл испорчен.");
         }
