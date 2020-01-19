@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using System.IO;
 using System;
+using ContactsApp.UnitTests.Properties;
 
 namespace СontactsAppUnitTests
 {
@@ -10,8 +11,9 @@ namespace СontactsAppUnitTests
     public class ProjectManagerTest
     {
 
-        public string DocPathActual = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\TestActual.txt";
-        public string DocPathTest = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\Test.txt";
+        private string DocPathActual = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\TestActual.txt";
+        private string DocPathTest = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\Test.txt";
+
         [Test(Description = "Позитивный тест сериализации. Сохранение")]
         public void TestProjectManagerSaveTToFile_CorrectValue()
         {
@@ -40,9 +42,12 @@ namespace СontactsAppUnitTests
 
             ProjectManager.SaveToFile(project, DocPathActual);
 
+            File.WriteAllText(DocPathTest, Resources.Test);
+            
             Assert.AreEqual(File.ReadAllText(DocPathActual), File.ReadAllText(DocPathTest), "Сериализация работает неверно.");
 
             File.Delete(DocPathActual);
+            File.Delete(DocPathTest);
         }
         [Test(Description = "Сохранение в неверный путь.")]
         public void TestProjectManagerSaveToFile_NotCorrectPath()
