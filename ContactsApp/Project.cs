@@ -34,8 +34,7 @@ namespace ContactsApp
         /// </summary>
         public string GetListBirthday()
         {
-            var listContacts = ContactList.Where(
-                First => First.BirthDay.Day == DateTime.Now.Day && First.BirthDay.Month == DateTime.Now.Month);
+            var listContacts = ContactList.Where(First => First.BirthDay.Day == DateTime.Now.Day && First.BirthDay.Month == DateTime.Now.Month);
 
             return string.Join(",", listContacts.Select(contact => contact.Surname).ToList());
         }

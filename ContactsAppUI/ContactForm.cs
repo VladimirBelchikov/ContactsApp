@@ -25,7 +25,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddEditForm_Load(object sender, EventArgs e)
+        private void ContactForm_Load(object sender, EventArgs e)
         {
             if (Contact == null)
             {

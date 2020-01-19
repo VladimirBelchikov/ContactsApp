@@ -187,7 +187,7 @@
             this.KeyPreview = true;
             this.Name = "ContactForm";
             this.Text = "Add/Edit Contact";
-            this.Load += new System.EventHandler(this.AddEditForm_Load);
+            this.Load += new System.EventHandler(this.ContactForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -60,7 +60,7 @@ namespace ContactsApp
                 }
                 else if (value.Length > 50)
                 {
-                    throw new ArgumentException("Длина имени должна быть не более 50-ти символов, а была" + value.Length);
+                    throw new ArgumentException($"Длина имени должна быть не более 50-ти символов, а была { value.Length }");
                 }
                 else
                 {
