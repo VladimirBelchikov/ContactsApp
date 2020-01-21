@@ -85,7 +85,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -102,21 +102,21 @@
             // addContactToolStripMenuItem
             // 
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
-            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.addContactToolStripMenuItem.Text = "Add Contact";
             this.addContactToolStripMenuItem.Click += new System.EventHandler(this.AddContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.EditContactToolStripMenuItem_Click);
             // 
             // removeContactToolStripMenuItem
             // 
             this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
-            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.removeContactToolStripMenuItem.Text = "Remove Contact";
             this.removeContactToolStripMenuItem.Click += new System.EventHandler(this.RemoveContactToolStripMenuItem_Click);
             // 
@@ -203,9 +203,9 @@
             this.VkLabel.AutoSize = true;
             this.VkLabel.Location = new System.Drawing.Point(228, 223);
             this.VkLabel.Name = "VkLabel";
-            this.VkLabel.Size = new System.Drawing.Size(43, 13);
+            this.VkLabel.Size = new System.Drawing.Size(46, 13);
             this.VkLabel.TabIndex = 6;
-            this.VkLabel.Text = "Vk.com";
+            this.VkLabel.Text = "Vk.com:";
             // 
             // SurnameTextBox
             // 
@@ -291,9 +291,9 @@
             this.FindLabel.AutoSize = true;
             this.FindLabel.Location = new System.Drawing.Point(12, 39);
             this.FindLabel.Name = "FindLabel";
-            this.FindLabel.Size = new System.Drawing.Size(27, 13);
+            this.FindLabel.Size = new System.Drawing.Size(30, 13);
             this.FindLabel.TabIndex = 18;
-            this.FindLabel.Text = "Find";
+            this.FindLabel.Text = "Find:";
             // 
             // FindTextBox
             // 
@@ -353,7 +353,7 @@
             this.BirthdayTodayLabel.AutoSize = true;
             this.BirthdayTodayLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BirthdayTodayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BirthdayTodayLabel.Location = new System.Drawing.Point(61, 38);
+            this.BirthdayTodayLabel.Location = new System.Drawing.Point(3, 40);
             this.BirthdayTodayLabel.Name = "BirthdayTodayLabel";
             this.BirthdayTodayLabel.Size = new System.Drawing.Size(137, 18);
             this.BirthdayTodayLabel.TabIndex = 20;
@@ -366,9 +366,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BackgroundPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundPanel.Controls.Add(this.BirthdayTodayLabel);
-            this.BackgroundPanel.Location = new System.Drawing.Point(232, 337);
+            this.BackgroundPanel.Location = new System.Drawing.Point(232, 338);
             this.BackgroundPanel.Name = "BackgroundPanel";
-            this.BackgroundPanel.Size = new System.Drawing.Size(377, 101);
+            this.BackgroundPanel.Size = new System.Drawing.Size(377, 100);
             this.BackgroundPanel.TabIndex = 21;
             this.BackgroundPanel.Visible = false;
             // 

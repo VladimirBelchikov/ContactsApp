@@ -139,9 +139,9 @@
             this.KeyPreview = true;
             this.Name = "AboutForm";
             this.Text = "About";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AboutForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AboutForm_KeyDown);
 
         }
 
