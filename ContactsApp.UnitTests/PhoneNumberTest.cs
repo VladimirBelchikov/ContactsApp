@@ -15,7 +15,7 @@ namespace СontactsAppUnitTests
             _phoneNumber = new PhoneNumber();
         }
 
-        [Test(Description = "Позитивный тест геттера Number")]
+        [Test(Description = "Позитивный тест геттера Number")] //Коммент для теста
         public void PhoneTestGet_CorrectValue()
         {
             var phone = 79998887766;
